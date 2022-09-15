@@ -6,11 +6,13 @@
  * Programming Project 1 Start Project
  * CS131ON
  */
-public class GenericLinkedList<T> {
+public class GenericLinkedList<T> extends GenericNode<T> {
 
-	private GenericNode<T> head; //node to represent the head of the list
-	private GenericNode<T> tail; //node to represent the tail (end) of the list
-	int length; //variable to keep track of the number of elements in the list
+	
+
+	protected GenericNode<T> head; //node to represent the head of the list
+	protected GenericNode<T> tail; //node to represent the tail (end) of the list
+	protected int length; //variable to keep track of the number of elements in the list
 	
 	/**
 	 * The constructor for this object initializes the list such that
@@ -66,44 +68,11 @@ public class GenericLinkedList<T> {
 		tail.setNextNode(null);
 		length++;
 		
-	}//end addNode 
+	}//end addNode
 	
-	public void served() {
-		GenericNode<T> current = head;
-		
-		while (current==null){
-			System.out.println("The Queue is Empty");
-		return;}
-		
-		while (current!=null) {
-			System.out.println(current.data+" Has been served");
-		return;}
-		head=null;
-		head.setNextNode(head);
-
-	}//end served
-	public void printList() {
-		
-	 GenericNode<T> current = head;               
-
-	        if(head == null) {    
-	        System.out.println("The Queue is empty");    
-	        	return; }    
-
-	        System.out.println("The following people are in the Queue:");    
-
-	        while(current != null)  {    
-	        	//printing each data in the list and next pointer pointing to the next node   
-	        	System.out.print(current.data + ", ");    
-	        	current = current.nextNode;  }  
-	}//end printList
 
 	@Override
 	public String toString() {
-		return "GenericLinkedList [head=" + head + ", tail=" + tail + ", length=" + length + ", toString()="
-				+ super.toString() + "]";
+		return " " + head+tail;
 	}
-	
-	
-
 }//end class
